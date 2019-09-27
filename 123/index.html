@@ -5,13 +5,14 @@
   <title>The prismatic forms </title>
   <link rel="stylesheet" href="./style.css">
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
 <!-- partial:index.partial.html -->
 <ul class="nav">
-  <li onclick="showLogin()">Admin Login</li>
-  <li onclick="showSignup()">Blood Bank Login</li>
-  <li onclick="showContactUs()">Hospital Login</li>
-  <li onclick="showForgotPassword()">Forgot password ?</li>
+  <li onclick="showLogin()" name="al">Admin Login</li>
+  <li onclick="showSignup()" name="bb">Blood Bank Login</li>
+  <li onclick="showContactUs()" name="hl">Hospital Login</li>
+  <li onclick="showForgotPassword()" name="fp">Forgot password ?</li>
 </ul>
 
 <div class="wrapper">
@@ -22,17 +23,17 @@
     2.<div class="face face-front">
       <div class="content">
         <h2>Admin Login</h2>
-        <form onsubmit="event.preventDefault()">
+        <form name="form_admin" onsubmit="event.preventDefault()">
           <div class="field-wrapper">
-            <input type="text" name="username" placeholder="username">
-            <label>username</label>
+            <input type="text" name="a_email" placeholder="E-Mail" >
+            <label>E-Main</label>
           </div>
           <div class="field-wrapper">
-            <input type="password" name="password" placeholder="password" autocomplete="new-password">
-            <label>password</label>
+            <input type="password" name="a_password" placeholder="Password" autocomplete="new-password" >
+            <label>Password</label>
           </div>
           <div class="field-wrapper">
-            <input type="submit" >
+            <input type="submit" name="a_submit" onclick="send(document.form_admin)" >
           </div>
           <span class="psw" onclick="showForgotPassword()">Forgot Password?   </span>
         </form>
@@ -45,11 +46,11 @@
         <small>Enter your email so we can send you a reset link for your password</small>
         <form onsubmit="event.preventDefault()">
           <div class="field-wrapper">
-            <input type="text" name="email" placeholder="email">
-            <label>e-mail</label>
+            <input type="text" name="Email" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="">
+            <label>E-Mail</label>
           </div>
           <div class="field-wrapper">
-            <input type="submit" >
+            <input type="submit" name="f_submit">
           </div>
         </form>
       </div>
@@ -60,15 +61,15 @@
         <h2>Blood Bank Login</h2>
         <form onsubmit="event.preventDefault()">
           <div class="field-wrapper">
-            <input type="text" name="email" placeholder="email">
-            <label>e-mail</label>
+            <input type="text" name="b_email" placeholder="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="">
+            <label>E-Mail</label>
           </div>
           <div class="field-wrapper">
-            <input type="password" name="password" placeholder="password" autocomplete="new-password">
-            <label>password</label>
+            <input type="password" name="b_password" placeholder="Password" autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.{8,}" required="">
+            <label>Password</label>
           </div>
           <div class="field-wrapper">
-            <input type="submit" >
+            <input type="submit" name="b_submit">
           </div>
            <span class="psw" onclick="showForgotPassword()">Forgot Password?   </span>
         </form>
@@ -80,15 +81,15 @@
         <h2>Hospital Login</h2>
         <form onsubmit="event.preventDefault()">
           <div class="field-wrapper">
-            <input type="text" name="email" placeholder="email">
-            <label>e-mail</label>
+            <input type="text" name="h_email" placeholder="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="">
+            <label>E-Mail</label>
           </div>
           <div class="field-wrapper">
-            <input type="password" name="password" placeholder="password" autocomplete="new-password">
-            <label>password</label>
+            <input type="password" name="h_password" placeholder="Password" autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.{8,}" required="">
+            <label>Password</label>
           </div>
           <div class="field-wrapper">
-            <input type="submit" >
+            <input type="submit" name="h_submit" >
           </div>
            <span class="psw" onclick="showForgotPassword()">Forgot Password?   </span>
           </div>
