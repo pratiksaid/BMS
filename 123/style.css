@@ -4,7 +4,7 @@
 
 body {
   font-family: Tahoma,Verdana,Segoe,sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   background: #f6fffd;
   padding: 20px;
   text-align: center;
@@ -208,3 +208,7 @@ small {
     -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
   }
 }
+
+
+
+
